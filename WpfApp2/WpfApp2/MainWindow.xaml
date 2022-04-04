@@ -1,0 +1,291 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border x:Name="border" Grid.Column="0" Width="200" HorizontalAlignment="Left">
+            <StackPanel Background="#31B1ED">
+                <Border Height="40">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="56" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox
+                            x:Name="cbDropdown"
+                            Grid.Column="1"
+                            Checked="OpenDropdown"
+                            RenderTransformOrigin="0.5 0.5"
+                            Unchecked="CloseDropdown">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <Grid Background="Transparent">
+                                        <Viewbox Width="16" Height="16">
+                                            <Path
+                                            Data="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"
+                                            Fill="White"
+                                            Stretch="Fill" />
+                                        </Viewbox>
+                                    </Grid>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <CheckBox.RenderTransform> 
+                                <RotateTransform Angle="90" />
+                            </CheckBox.RenderTransform>
+                            <CheckBox.Style>
+                                <Style TargetType="CheckBox">
+                                    <Style.Triggers>
+                                        <EventTrigger RoutedEvent="Checked">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                    Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
+                                                    To="-90"
+                                                    Duration="0:0:0.2" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="Unchecked">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                    Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
+                                                    To="90"
+                                                    Duration="0:0:0.2" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </CheckBox.Style>
+                        </CheckBox>
+                    </Grid>
+                </Border>
+                <Border Height="55">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                        </Grid.ColumnDefinitions>
+                        <Border Height="45" Grid.Column="1" CornerRadius="10" Background="White">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <StackPanel Margin="15 0 15 0" VerticalAlignment="Center">
+                                    <Ellipse Width="7" Height="7" Fill="Black" />
+                                    <Path Fill="Black" Data="m 0 10 l 16 0 a 1 1 0 0 0 -16 0 z" />
+                                </StackPanel>
+                                <TextBlock Text="Donners" FontSize="20" FontWeight="Medium" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>    
+                </Border>
+                <Border Height="45">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                        </Grid.ColumnDefinitions>
+                        <Border Height="35" Grid.Column="1" CornerRadius="10" Background="Transparent">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <StackPanel Margin="15 0 15 0" VerticalAlignment="Center">
+                                    <Ellipse Width="7" Height="7" Fill="White" />
+                                    <Path Fill="White" Data="m 0 10 l 16 0 a 1 1 0 0 0 -16 0 z" />
+                                </StackPanel>
+                                <TextBlock Text="Donners" FontSize="20" FontWeight="Medium" Foreground="White" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border Height="45">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                        </Grid.ColumnDefinitions>
+                        <Border Height="35" Grid.Column="1" CornerRadius="10" Background="Transparent">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <StackPanel Margin="15 0 15 0" VerticalAlignment="Center">
+                                    <Ellipse Width="7" Height="7" Fill="White" />
+                                    <Path Fill="White" Data="m 0 10 l 16 0 a 1 1 0 0 0 -16 0 z" />
+                                </StackPanel>
+                                <TextBlock Text="Donners" FontSize="20" FontWeight="Medium" Foreground="White" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border Height="45">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                        </Grid.ColumnDefinitions>
+                        <Border Height="35" Grid.Column="1" CornerRadius="10" Background="Transparent">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <StackPanel Margin="15 0 15 0" VerticalAlignment="Center">
+                                    <Ellipse Width="7" Height="7" Fill="White" />
+                                    <Path Fill="White" Data="m 0 10 l 16 0 a 1 1 0 0 0 -16 0 z" />
+                                </StackPanel>
+                                <TextBlock Text="Donners" FontSize="20" FontWeight="Medium" Foreground="White" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Border>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border x:Name="border2" Grid.Column="0" Width="200" HorizontalAlignment="Left">
+                <StackPanel Background="White">
+                    <Border Height="40">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="56" />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox
+                            x:Name="cbDropdown2"
+                            Grid.Column="1"
+                            Checked="opendropdown2"
+                            RenderTransformOrigin="0.5 0.5"
+                            Unchecked="CloseDropdown2">
+                                <CheckBox.Template>
+                                    <ControlTemplate TargetType="CheckBox">
+                                        <Grid Background="Transparent">
+                                            <Viewbox Width="16" Height="16">
+                                                <Path
+                                            Data="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"
+                                            Fill="Black"
+                                            Stretch="Fill" />
+                                            </Viewbox>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </CheckBox.Template>
+                                <CheckBox.RenderTransform>
+                                    <RotateTransform Angle="90" />
+                                </CheckBox.RenderTransform>
+                                <CheckBox.Style>
+                                    <Style TargetType="CheckBox">
+                                        <Style.Triggers>
+                                            <EventTrigger RoutedEvent="Checked">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation
+                                                    Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
+                                                    To="-90"
+                                                    Duration="0:0:0.2" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="Unchecked">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation
+                                                    Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
+                                                    To="90"
+                                                    Duration="0:0:0.2" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </CheckBox.Style>
+                            </CheckBox>
+                        </Grid>
+                    </Border>
+                    <Border Height="55">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="5" />
+                            </Grid.ColumnDefinitions>
+                            <Border Width="4" Height="35" Background="#31B1ED" CornerRadius="0 3 3 0" HorizontalAlignment="Left">
+                                <Border.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="1" Opacity="0.8" Color="#31B1ED" />
+                                </Border.Effect>
+                            </Border>
+                            <Border Height="45" Grid.Column="1" CornerRadius="10" Background="Transparent">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <StackPanel Margin="15 0 15 0" VerticalAlignment="Center">
+                                        <Ellipse Width="7" Height="7" Fill="#31B1ED" />
+                                        <Path Fill="#31B1ED" Data="m 0 10 l 16 0 a 1 1 0 0 0 -16 0 z" />
+                                    </StackPanel>
+                                    <TextBlock Text="Donners" FontSize="20" FontWeight="Medium" Foreground="#31B1ED"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Border Height="45">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="5" />
+                            </Grid.ColumnDefinitions>
+                            <Border Height="35" Grid.Column="1" CornerRadius="10" Background="Transparent">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <StackPanel Margin="15 0 15 0" VerticalAlignment="Center">
+                                        <Ellipse Width="7" Height="7" Fill="Black" />
+                                        <Path Fill="Black" Data="m 0 10 l 16 0 a 1 1 0 0 0 -16 0 z" />
+                                    </StackPanel>
+                                    <TextBlock Text="Donners" FontSize="20" FontWeight="Medium" Foreground="Black" />
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Border Height="45">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="5" />
+                            </Grid.ColumnDefinitions>
+                            <Border Height="35" Grid.Column="1" CornerRadius="10" Background="Transparent">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <StackPanel Margin="15 0 15 0" VerticalAlignment="Center">
+                                        <Ellipse Width="7" Height="7" Fill="Black" />
+                                        <Path Fill="Black" Data="m 0 10 l 16 0 a 1 1 0 0 0 -16 0 z" />
+                                    </StackPanel>
+                                    <TextBlock Text="Donners" FontSize="20" FontWeight="Medium" Foreground="Black" />
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Border Height="45">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="5" />
+                            </Grid.ColumnDefinitions>
+                            <Border Height="35" Grid.Column="1" CornerRadius="10" Background="Transparent">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <StackPanel Margin="15 0 15 0" VerticalAlignment="Center">
+                                        <Ellipse Width="7" Height="7" Fill="Black" />
+                                        <Path Fill="Black" Data="m 0 10 l 16 0 a 1 1 0 0 0 -16 0 z" />
+                                    </StackPanel>
+                                    <TextBlock Text="Donners" FontSize="20" FontWeight="Medium" Foreground="Black" />
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </Border>
+            <Border Background="#F6F6F6" Grid.Column="1" />
+        </Grid>
+    </Grid>
+</Window>
